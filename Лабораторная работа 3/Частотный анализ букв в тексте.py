@@ -1,29 +1,26 @@
 # TODO  Напишите функцию count_letters
 
 def count_letters(text):
-    lower = text.lower()
-    count = {}
+    lower = text.lower() #привожу текст к нижнему регистру
+    count = {} #это словарь для хранения букв
     for i in lower:
-        if i.isalpha():
-            if i in count:
+        if i.isalpha(): #проверяю, является ли символ буквой
+            if i in count: #если буква есть в словаре, что увеличиваю её счётчик
                 count[i] += 1
             else:
                 count[i] = 1
     return count
 
-
 # TODO Напишите функцию calculate_frequency
 
-
 def calculate_frequency(count):
-    total = sum(count.values())
+    total = sum(count.values()) #считаю общее кол-во букв
 
-    frequency = {}
+    frequency = {} #словарь для хранения частотности
     for i, j in count.items():
-        frequency[i] = j / total
+        frequency[i] = j / total #вычисляю частоту буквы
 
     return frequency
-
 
 main_str = """
 У лукоморья дуб зелёный;
